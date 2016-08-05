@@ -1,0 +1,117 @@
+<md-dialog class="ticket-dialog mobile-fullwidth-dialog" flex="90" flex-xs="100">
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <h2 flex>
+                <span translate>TICKETS.TICKET.TITLE</span><span>{{vm.ticket.id}}</span>
+            </h2>
+            <md-button class="md-icon-button" ng-click="vm.printClick()" aria-label="print">
+                <md-icon md-font-icon="zmdi zmdi-print"></md-icon>
+            </md-button>
+            <md-button class="md-icon-button" ng-click="vm.cancelClick()" aria-label="cancel">
+                <md-icon md-font-icon="zmdi zmdi-close"></md-icon>
+            </md-button>
+        </div>
+    </md-toolbar>
+
+    <md-dialog-content class="md-dialog-content">
+        <div flex palette-background="deep-purple:500" class="padding-20">
+            <div flex layout="row" class="margin-bottom-10">
+                <div flex>
+                    <strong translate>State</strong>
+                </div>
+                <div flex>
+                    <span>{{vm.ticket.stateName}}</span>
+                </div>
+                <div flex>
+                    <strong translate>Studio</strong>
+                </div>
+                <div flex>
+                    <span>{{vm.ticket.studioName}}</span>
+                </div>
+                <div flex>
+                    <strong translate>Submitted Date</strong>
+                </div>
+                <div flex>
+                    <span>{{vm.ticket.clientName}}</span>
+                </div>
+            </div>
+            <div flex layout="row" class="margin-bottom-10">
+                <div flex>
+                    <strong translate>Submitter</strong>
+                </div>
+                <div flex>
+                    <span>{{vm.ticket.stateName}}</span>
+                </div>
+                <div flex>
+                    <strong translate>Location offshore</strong>
+                </div>
+                <div flex>
+                    <span>{{vm.ticket.studioName}}</span>
+                </div>
+                <div flex>
+                    <strong translate>Update Date</strong>
+                </div>
+                <div flex>
+                    <span>{{vm.ticket.clientName}}</span>
+                </div>
+            </div>
+            <div flex layout="row" class="margin-bottom-10">
+                <div flex>
+                    <strong translate>Handler</strong>
+                </div>
+                <div flex>
+                    <span>{{vm.ticket.handlerName}}</span>
+                </div>
+                <div flex>
+                    <strong translate>English req.</strong>
+                </div>
+                <div flex>
+                    <span>{{vm.ticket.studioName}}</span>
+                </div>
+                <div flex>
+                    <strong translate>Due Date</strong>
+                </div>
+                <div flex>
+                    <span>{{vm.ticket.clientName}}</span>
+                </div>
+            </div>
+
+        </div>
+
+        <md-divider class="margin-bottom-40 margin-top-40"></md-divider>
+
+        <table class="ticket-dialog-product-table md-table">
+            <thead>
+                <tr>
+                    <th translate>TICKETS.TICKET.PRODUCT</th>
+                    <th translate>TICKETS.TICKET.CATEGORY</th>
+                    <th class="text-right" translate>TICKETS.TICKET.PRICE</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="item in vm.ticket.items">
+                    <td>{{item.name}}</td>
+                    <td>{{item.category}}</td>
+                    <td class="text-right padding-right-10">{{item.price | currency}}</td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="font-weight-600" translate>TICKETS.TICKET.SUB-TOTAL</td>
+                    <td class="text-right font-weight-600 padding-right-10">{{vm.ticket.subTotal | currency}}</td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="font-weight-600" translate>TICKETS.TICKET.TAX</td>
+                    <td class="text-right font-weight-600 padding-right-10">{{vm.ticket.tax | currency}}</td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="font-weight-600" translate>TICKETS.TICKET.TOTAL</td>
+                    <td class="text-right font-weight-600 padding-right-10">{{vm.ticket.total | currency}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </md-dialog-content>
+
+    <md-dialog-actions layout="row">
+        <span flex></span>
+        <md-button ng-click="vm.okClick()" class="md-primary" aria-label="{{GENERAL.OK | translate}}" translate="GENERAL.OK"></md-button>
+    </md-dialog-actions>
+</md-dialog>

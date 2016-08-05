@@ -1,0 +1,63 @@
+<div class="dashboard-container overlay-2 padded-content-page tickets-dashboard " layout="column">
+
+
+    <div layout="row" layout-xs="column" layout-margin dragula='"drag-analytics-container"'>
+        <tri-widget palette-background="yellow:600" content-layout="column" content-layout-align="space-between center" >
+            <p class="md-display-2 font-weight-100 margin-top-10 margin-bottom-0" countupto="vm.ticketsData.totalTickets" duration="1.5" decimals="0"></p>
+            <p class="md-body-2 opacity-60 margin-top-0 margin-bottom-10" translate>TICKETS.TOTAL-TICKETS</p>
+        </tri-widget>
+        <tri-widget palette-background="deep-orange:500" content-layout="column" content-layout-align="space-between center" >
+            <p class="md-display-2 font-weight-100 margin-top-10 margin-bottom-0" countupto="vm.ticketsData.totalInProgress" duration="1.5" decimals="0"></p>
+            <p class="md-body-2 opacity-60 margin-top-0 margin-bottom-10" translate>TICKETS.TOTAL-INPROGRESS</p>
+        </tri-widget>
+        <tri-widget palette-background="teal:500" content-layout="column" content-layout-align="space-between center" >
+            <p class="md-display-2 font-weight-100 margin-top-10 margin-bottom-0" countupto="vm.ticketsData.totalInternallyStaffed" duration="1.5" decimals="0"></p>
+            <p class="md-body-2 opacity-60 margin-top-0 margin-bottom-10" translate>TICKETS.TOTAL-INTERNALSTAFFED</p>
+        </tri-widget>
+    </div>
+
+    <div layout="row" layout-xs="column" layout-margin>
+        <tri-widget flex content-layout="column" content-layout-align="center">
+            <search filter="vm.filter" title="Tickets" />
+            <md-table-container>
+            <table md-table >
+                <thead md-head md-order="vm.query.order" md-on-reorder="vm.getData">
+                <tr md-row>
+                    <th md-column md-order-by="Number"><span>Number</span></th>
+                    <th md-column md-order-by="Name"><span>Name</span></th>
+                    <th md-column md-order-by="Client/Name">Account</th>
+                    <th md-column md-order-by="Project/Name">Project</th>
+                    <th md-column md-order-by="Candidate/Name">Candidate</th>
+                    <th md-column md-order-by="StartDate">Start Date</th>
+                    <th md-column md-order-by="Stage/Name">Stage</th>
+                    <th md-column >View</th>
+                </tr>
+                </thead>
+                <tbody md-body>
+                <tr ng-repeat="ticket in vm.ticketsData.tickets">
+                                        <td md-cell>
+                                            <span class="status" ng-class="'status-' + ticket.stateId" >
+                                            </span>
+                                            <md-tooltip>{{::ticket.stateName}}</md-tooltip>
+                                            {{::ticket.number}}</td>
+                                        <td md-cell>{{::ticket.name}}</td>
+                                        <td md-cell>{{::ticket.clientName}}</td>
+                                        <td md-cell>{{::ticket.projectName}}</td>
+                                        <td md-cell>{{::ticket.candidateName}}</td>
+                                        <td md-cell>{{::ticket.startDate | amDateFormat:'YYYY-MM-DD'}}</td>
+                                        <td md-cell>{{::ticket.stageName}}</td>
+                                        <td md-cell>
+                                            <md-button ng-click="vm.openTicket(ticket, $event)" class="md-icon-button" aria-label="Open ticket">
+                                                <md-icon md-font-icon="zmdi zmdi-search"></md-icon>
+                                            </md-button>
+                                        </td>
+                </tr>
+                </tbody>
+            </table>
+            </md-table-container>
+
+            <md-table-pagination md-limit="vm.query.limit" md-limit-options="[10, 20, 30]" md-page="vm.query.page" md-total="{{vm.ticketsData.tickets.count}}" md-on-paginate="vm.getData" md-page-select></md-table-pagination>
+        </tri-widget>
+    </div>
+
+</div>

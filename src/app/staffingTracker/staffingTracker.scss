@@ -1,0 +1,82 @@
+html, body {
+  height: 100%;
+}
+
+// import animate scss
+@import "animate.css-scss/animate.scss";
+
+
+// core
+
+@import "scss/contextual";
+@import "scss/dialogs";
+@import "scss/material-overrides";
+@import "scss/print";
+@import "scss/reset";
+@import "scss/social";
+@import "scss/tables";
+@import "scss/typography";
+@import "scss/utilities";
+
+// components
+
+@import "components/footer/footer.scss";
+@import "components/loader/loader.scss";
+@import "components/menu/menu.scss";
+@import "components/notifications-panel/notifications-panel.scss";
+@import "components/table/table.scss";
+@import "components/toolbars/toolbar.scss";
+@import "components/widget/widget.scss";
+@import "components/wizard/wizard.scss";
+
+// directives
+
+// layouts
+
+@import "layouts/default/default.scss";
+
+// advanced tables
+
+table.md-table {
+  td {
+    vertical-align: middle;
+    img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        box-sizing: content-box;
+        margin-top: 4px;
+      }
+  }
+  thead {
+    tr {
+      height: 0;
+    }
+  }
+}
+
+.md-table-toolbar {
+  input {
+    width: 100%;
+    margin: 0;
+    border: none;
+    color: rgba(0, 0, 0, 0.87);
+    &:focus {
+        outline: none;
+    }
+  }
+}
+
+
+.zmdi-search{
+  padding-right: 10px;
+}
+
+.md-datepicker {
+    padding-right: 0px;
+    margin-right: 0px;
+}
+
+.md-datepicker-button {
+  display: none;
+}

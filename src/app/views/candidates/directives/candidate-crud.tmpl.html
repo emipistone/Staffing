@@ -1,0 +1,42 @@
+    <md-sidenav class="md-sidenav-right md-whiteframe-4dp" md-component-id="right" >
+
+        <md-toolbar class="md-theme-light">
+            <h1 class="md-toolbar-tools">Create</h1>
+        </md-toolbar>
+        <md-content layout-padding="">
+            <form name="candidateForm" novalidate>
+                <md-input-container class="md-block">
+                    <label>Name *</label>
+                    <input type="text" ng-model="candidate.name" required>
+                </md-input-container>
+                <md-input-container class="md-block">
+                    <label>Last Name *</label>
+                    <input type="text" ng-model="candidate.lastName" required>
+                </md-input-container>
+ 
+                <md-datepicker style="float:right;    padding-right: 0px;    margin-right: 0px;" ng-model="candidate.birthday" md-placeholder="Enter date"></md-datepicker>
+                <md-input-container style="width: 50%;    padding-bottom: 28px;" class="md-block"><label>Birthday</label></md-input-container>
+                                <md-input-container class="md-block">
+                    <label>DNI</label>
+                    <input type="text" ng-model="candidate.dni" >
+                </md-input-container>
+                
+                <md-input-container class="md-block">
+                    <label for="email">emai *</label>
+                    <input id="email" label="email" name="email" type="email" ng-model="candidate.email" required/>
+                    <div ng-messages="candidateForm.email.$error" md-auto-hide="false" ng-show="candidateForm.email.$touched">
+                        <div ng-message="required">
+                            Please enter your email address.
+                        </div>
+                        <div ng-message="email">
+                            Please enter a valid email address.
+                        </div>
+                    </div>
+                </md-input-container>
+                <div layout="row" layout-align="end center">
+                    <md-button class="md-accent md-raised" ng-click="actionSave()" ng-disabled="candidateForm.$invalid">Create</md-button>
+                    <md-button class="md-warn md-raised" ng-click="close()">Cancel</md-button>
+                </div>
+            </form>
+
+    </md-sidenav>

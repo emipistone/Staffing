@@ -1,0 +1,36 @@
+// import material icons
+$zmdi-font-path: "../bower_components/material-design-iconic-font/dist/fonts";
+@import "bower_components/material-design-iconic-font/scss/material-design-iconic-font.scss";
+
+// import angular material scss
+@import "angular-material/angular-material.scss";
+
+// import staffingTracker module scss
+@import "staffingTracker/staffingTracker";
+
+// set template font family
+button, select, html, textarea, input {
+  font-family: RobotoDraft, Roboto, 'Helvetica Neue', sans-serif;
+}
+
+// import app scss
+
+@import "scss/material-backgrounds";
+
+// Add your CSS here
+
+/**
+ *  Do not remove this comments bellow. It's the markers used by gulp-inject to inject
+ *  all your sass files automatically
+ */
+// injector
+// endinjector
+
+.dark-primary-color    { background: #00796B; }
+.default-primary-color { background: #009688; }
+.light-primary-color   { background: #B2DFDB; }
+.text-primary-color    { color: #FFFFFF; }
+.accent-color          { background: #CDDC39; }
+.primary-text-color    { color: #212121; }
+.secondary-text-color  { color: #727272; }
+.divider-color         { border-color: #B6B6B6; }

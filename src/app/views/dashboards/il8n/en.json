@@ -1,0 +1,23 @@
+{
+    "MENU": {
+        "DASHBOARDS": {
+            "DASHBOARDS": "Dashboards",
+            "ANALYTICS": "Analytics",
+            "TICKETS": "Tickets",
+            "CANDIDATES": "Candidates"
+        }
+    },
+    "DASHBOARDS": {
+        "ANALYTICS": {
+            "CANDIDATES": "Candidates",
+            "TICKETS": "Tickets",
+            "PROJECTS": "Projects",
+            "POSITIONS": "Positions",
+            "PAGEVIEWS": "Pageviews & Visits",
+            "STUDIOS": "Studios",
+            "SOCIAL": "Studio Referrals",
+            "LOCATION": "Location",
+            "DATE": "11/03/15 - 11/4/15"
+        }
+    }
+}

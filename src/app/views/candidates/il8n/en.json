@@ -1,0 +1,12 @@
+{
+    "MENU": {
+        "CANDIDATES": "Candidates"
+    },
+    "CANDIDATES": {
+        "CANDIDATES": "Candidates",
+        "TOTAL-CANDIDATES": "Total Candidates",
+        "TOTAL-INPROGRESS": "Total In Progress",
+        "TOTAL-INTERNALSTAFFED": "Total Internal Staffed",
+        "CANDIDATE-STATUS": "Candidate Status"
+    }
+}

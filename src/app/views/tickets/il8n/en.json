@@ -1,0 +1,12 @@
+{
+    "MENU": {
+        "TICKETS": "Tickets"
+    },
+    "TICKETS": {
+        "TICKETS": "Tickets",
+        "TOTAL-TICKETS": "Total Tickets",
+        "TOTAL-INPROGRESS": "Total In Progress",
+        "TOTAL-INTERNALSTAFFED": "Total Internal Staffed",
+        "TICKET-STATUS": "Ticket Status"
+    }
+}
